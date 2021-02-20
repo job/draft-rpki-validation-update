@@ -20,7 +20,7 @@
   
 <front>
     
-  <title abbrev="RPKI Validation">RPKI Validation Un-re-reconsidered</title>
+  <title abbrev="RPKI Validation Algorithm">RPKI Validation Un-re-reconsidered</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
     <organization>Fastly</organization>
