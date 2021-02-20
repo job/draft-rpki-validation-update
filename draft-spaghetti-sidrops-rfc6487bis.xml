@@ -69,7 +69,7 @@
 	<xref target="RFC8360" /> describes an improved validation algorithm for signed objects published in the RPKI.
         The improved validation algorithm would help in situations such as described in this <xref target="Report" />.
 	However, operational experience has shown the described procedure for deploying updates to the validation algorithm, as described in <xref target="RFC6487"/> Section 9, is impractical.
-	This document deprecates the original <xref target="RFC6487" /> section 7 algorithm in favour of the <xref target="RFC8360" /> (which is obsoleted as a result) algorithm.
+	This document deprecates the original <xref target="RFC6487" /> section 7 algorithm in favour of the <xref target="RFC8360" /> algorithm, and obsoletes <xref target="RFC8360" /> because a migration via those codepoints is infeasible.
 	This document also deprecates the procedure set out in <xref target="RFC6487" /> section 9 for future changes to the validation algorithm.
     </t>
 
@@ -274,9 +274,10 @@
 
     <t>
       The authors would like to thank
-      Tim Bruijnzeels
+      Tim Bruijnzeels,
+      George Michaelson,
       and
-      George Michaelson
+      Mikael Abrahamson
       for their helpful review of this document.
     </t>
 

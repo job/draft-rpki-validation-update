@@ -1333,7 +1333,7 @@ dt+dd:empty::before{
  <span>[<a href="#RFC8360" class="xref">RFC8360</a>]</span> describes an improved validation algorithm for signed objects published in the RPKI.
         The improved validation algorithm would help in situations such as described in this <span>[<a href="#Report" class="xref">Report</a>]</span>.
  However, operational experience has shown the described procedure for deploying updates to the validation algorithm, as described in <span>[<a href="#RFC6487" class="xref">RFC6487</a>]</span> Section 9, is impractical.
- This document deprecates the original <span>[<a href="#RFC6487" class="xref">RFC6487</a>]</span> section 7 algorithm in favour of the <span>[<a href="#RFC8360" class="xref">RFC8360</a>]</span> (which is obsoleted as a result) algorithm.
+ This document deprecates the original <span>[<a href="#RFC6487" class="xref">RFC6487</a>]</span> section 7 algorithm in favour of the <span>[<a href="#RFC8360" class="xref">RFC8360</a>]</span> algorithm, and obsoletes <span>[<a href="#RFC8360" class="xref">RFC8360</a>]</span> because a migration via those codepoints is infeasible.
  This document also deprecates the procedure set out in <span>[<a href="#RFC6487" class="xref">RFC6487</a>]</span> section 9 for future changes to the validation algorithm.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <section id="section-1.1">
         <h3 id="name-requirements-language-2">
@@ -1533,9 +1533,10 @@ dt+dd:empty::before{
       </h2>
 <p id="section-7-1">
       The authors would like to thank
-      Tim Bruijnzeels
+      Tim Bruijnzeels,
+      George Michaelson,
       and
-      George Michaelson
+      Mikael Abrahamson
       for their helpful review of this document.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 <section id="section-8">

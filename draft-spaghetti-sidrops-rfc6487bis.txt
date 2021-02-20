@@ -65,16 +65,16 @@ Table of Contents
    2.  Updates to RFC 6482 . . . . . . . . . . . . . . . . . . . . .   2
    3.  Updates to RFC 6487 . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  Updates to Section 7.2  . . . . . . . . . . . . . . . . .   3
-     3.2.  Updates to Section 9  . . . . . . . . . . . . . . . . . .   5
+     3.2.  Updates to Section 9  . . . . . . . . . . . . . . . . . .   6
    4.  Implementation status - RFC EDITOR: REMOVE BEFORE
            PUBLICATION . . . . . . . . . . . . . . . . . . . . . . .   6
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      8.2.  Informative References  . . . . . . . . . . . . . . . . .   8
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
 
@@ -85,9 +85,10 @@ Table of Contents
    deploying updates to the validation algorithm, as described in
    [RFC6487] Section 9, is impractical.  This document deprecates the
    original [RFC6487] section 7 algorithm in favour of the [RFC8360]
-   (which is obsoleted as a result) algorithm.  This document also
-   deprecates the procedure set out in [RFC6487] section 9 for future
-   changes to the validation algorithm.
+   algorithm, and obsoletes [RFC8360] because a migration via those
+   codepoints is infeasible.  This document also deprecates the
+   procedure set out in [RFC6487] section 9 for future changes to the
+   validation algorithm.
 
 1.1.  Requirements Language
 
@@ -101,11 +102,10 @@ Table of Contents
 
    This section updates Section 4 [RFC6482].  The following text:
 
-      The IP address delegation extension [RFC3779] is present in the
-      end-entity (EE) certificate (contained within the ROA), and each
-      IP address prefix(es) in the ROA is contained within the set of IP
-      addresses specified by the EE certificate's IP address delegation
-      extension.
+
+
+
+
 
 
 
@@ -113,6 +113,12 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 2]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+      The IP address delegation extension [RFC3779] is present in the
+      end-entity (EE) certificate (contained within the ROA), and each
+      IP address prefix(es) in the ROA is contained within the set of IP
+      addresses specified by the EE certificate's IP address delegation
+      extension.
 
    Is replaced with:
 
@@ -156,12 +162,6 @@ Internet-Draft               RPKI Validation               February 2021
    The algorithm is initialized with two new variables for use in the
    RPKI: Verified Resource Set-IP (VRS-IP) and Verified Resource Set-AS
    (VRS-AS).  These sets are used to track the set of INRs (IP address
-   space and AS numbers) that are considered valid for each CA
-   certificate.  The VRS-IP and VRS-AS sets are initially set to the IP
-   Address Delegation and AS Identifier Delegation values, respectively,
-   from the trust anchor used to perform validation.
-
-
 
 
 
@@ -169,6 +169,11 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 3]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   space and AS numbers) that are considered valid for each CA
+   certificate.  The VRS-IP and VRS-AS sets are initially set to the IP
+   Address Delegation and AS Identifier Delegation values, respectively,
+   from the trust anchor used to perform validation.
 
    This path validation algorithm verifies, among other things, that a
    prospective certification path (a sequence of n certificates)
@@ -206,6 +211,21 @@ Internet-Draft               RPKI Validation               February 2021
        sections.  Any extension not thus identified MUST NOT appear in
        certificate x.
 
+
+
+
+
+
+
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 4]
+
+Internet-Draft               RPKI Validation               February 2021
+
+
    5.  If certificate x uses the Certificate Policy defined in
        Section 4.2.4.1, then all extensions defined in Section 4.8 of
        [RFC6487], except Sections 4.8.9, 4.8.10, and 4.8.11 MUST be
@@ -218,13 +238,6 @@ Internet-Draft               RPKI Validation               February 2021
    6.  Certificate x MUST NOT have been revoked, i.e., it MUST NOT
        appear on a Certificate Revocation List (CRL) issued by the CA
        represented by certificate x-1.
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 4]
-
-Internet-Draft               RPKI Validation               February 2021
-
 
    7.  Compute the VRS-IP and VRS-AS set values as indicated below:
 
@@ -261,6 +274,14 @@ Internet-Draft               RPKI Validation               February 2021
    These rules allow a CA certificate to contain resources that are not
    present in (all of) the certificates along the path from the trust
    anchor to the CA certificate.  If none of the resources in the CA
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 5]
+
+Internet-Draft               RPKI Validation               February 2021
+
+
    certificate are present in all certificates along the path, no
    subordinate certificates could be valid.  However, the certificate is
    not immediately rejected as this may be a transient condition.  Not
@@ -272,15 +293,6 @@ Internet-Draft               RPKI Validation               February 2021
 
    Section 9 "Operational Considerations for Profile Agility" is
    removed.
-
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 5]
-
-Internet-Draft               RPKI Validation               February 2021
-
 
 4.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION
 
@@ -314,6 +326,18 @@ Internet-Draft               RPKI Validation               February 2021
    At the time of writing there are zero (0) certificates in the RPKI
    carrying the extensions and policy defined in [RFC8360].
 
+
+
+
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 6]
+
+Internet-Draft               RPKI Validation               February 2021
+
+
 5.  Security Considerations
 
    The authors believe that the revised validation algortihm introduces
@@ -331,13 +355,6 @@ Internet-Draft               RPKI Validation               February 2021
    IANA is requested to reference this document in the "SMI Security for
    PKIX Certificate Extensions" registry at:
 
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 6]
-
-Internet-Draft               RPKI Validation               February 2021
-
-
    *  id-pe-ipAddrBlocks-v2
 
    *  id-pe-autonomousSysIds-v2
@@ -351,8 +368,8 @@ Internet-Draft               RPKI Validation               February 2021
 
 7.  Acknowledgements
 
-   The authors would like to thank Tim Bruijnzeels and George Michaelson
-   for their helpful review of this document.
+   The authors would like to thank Tim Bruijnzeels, George Michaelson,
+   and Mikael Abrahamson for their helpful review of this document.
 
 8.  References
 
@@ -367,6 +384,15 @@ Internet-Draft               RPKI Validation               February 2021
               Addresses and AS Identifiers", RFC 3779,
               DOI 10.17487/RFC3779, June 2004,
               <https://www.rfc-editor.org/info/rfc3779>.
+
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 7]
+
+Internet-Draft               RPKI Validation               February 2021
+
 
    [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
               Housley, R., and W. Polk, "Internet X.509 Public Key
@@ -383,16 +409,6 @@ Internet-Draft               RPKI Validation               February 2021
               X.509 PKIX Resource Certificates", RFC 6487,
               DOI 10.17487/RFC6487, February 2012,
               <https://www.rfc-editor.org/info/rfc6487>.
-
-
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 7]
-
-Internet-Draft               RPKI Validation               February 2021
-
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -425,6 +441,15 @@ Internet-Draft               RPKI Validation               February 2021
               <https://www.ripe.net/ripe/mail/archives/routing-
               wg/2021-January/004220.html>.
 
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 8]
+
+Internet-Draft               RPKI Validation               February 2021
+
+
    [routinator]
               Snijders, J., "Harmonize RFC 8360 and RFC 6487 in rpki-
               rs", February 2021, <https://github.com/job/rpki-
@@ -442,14 +467,6 @@ Authors' Addresses
    Amsterdam
    Netherlands
 
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 8]
-
-Internet-Draft               RPKI Validation               February 2021
-
-
    Email: job@fastly.com
 
 
@@ -459,23 +476,6 @@ Internet-Draft               RPKI Validation               February 2021
    South Africa
 
    Email: benm@workonline.africa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
