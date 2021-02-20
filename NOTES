@@ -11,5 +11,3 @@ Search engines suggest there are no consumers of the X509v3_{addr,asid}_* functi
 
 https://github.com/search?q=X509v3_addr_validate_path&type=commits
 https://codesearch.debian.net/search?q=X509v3_addr_validate_path&literal=1
-
-coauthors Tim & George

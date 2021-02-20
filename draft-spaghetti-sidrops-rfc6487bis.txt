@@ -79,13 +79,15 @@ Table of Contents
 1.  Introduction
 
    [RFC8360] describes an improved validation algorithm for signed
-   objects published in the RPKI.  However, operational experience has
-   shown the described procedure for deploying updates to the validation
-   algorithm, as described in [RFC6487] Section 9, is impractical.  This
-   document deprecates the original [RFC6487] section 7 algorithm in
-   favour of the [RFC8360] (which is obsoleted as a result) algorithm.
-   This document also deprecates the procedure set out in [RFC6487]
-   section 9 for future changes to the validation algorithm.
+   objects published in the RPKI.  The improved validation algorithm
+   would help in situations such as described in this [Report].
+   However, operational experience has shown the described procedure for
+   deploying updates to the validation algorithm, as described in
+   [RFC6487] Section 9, is impractical.  This document deprecates the
+   original [RFC6487] section 7 algorithm in favour of the [RFC8360]
+   (which is obsoleted as a result) algorithm.  This document also
+   deprecates the procedure set out in [RFC6487] section 9 for future
+   changes to the validation algorithm.
 
 1.1.  Requirements Language
 
@@ -105,14 +107,14 @@ Table of Contents
       addresses specified by the EE certificate's IP address delegation
       extension.
 
-   Is replaced with:
-
 
 
 Snijders & Maddison      Expires 24 August 2021                 [Page 2]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   Is replaced with:
 
       The IP Address Delegation extension described in Section 4.2.4.2
       is present in the end entity (EE) certificate (contained within
@@ -159,9 +161,7 @@ Internet-Draft               RPKI Validation               February 2021
    Address Delegation and AS Identifier Delegation values, respectively,
    from the trust anchor used to perform validation.
 
-   This path validation algorithm verifies, among other things, that a
-   prospective certification path (a sequence of n certificates)
-   satisfies the following conditions:
+
 
 
 
@@ -169,6 +169,10 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 3]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   This path validation algorithm verifies, among other things, that a
+   prospective certification path (a sequence of n certificates)
+   satisfies the following conditions:
 
    a.  for all 'x' in {1, ..., n-1}, the subject of certificate 'x' is
        the issuer of certificate ('x' + 1);
@@ -215,16 +219,14 @@ Internet-Draft               RPKI Validation               February 2021
        appear on a Certificate Revocation List (CRL) issued by the CA
        represented by certificate x-1.
 
-   7.  Compute the VRS-IP and VRS-AS set values as indicated below:
-
-
-
 
 
 Snijders & Maddison      Expires 24 August 2021                 [Page 4]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   7.  Compute the VRS-IP and VRS-AS set values as indicated below:
 
        *  If the IP Address Delegation extension is present in
           certificate x and x=1, set the VRS-IP to the resources found
@@ -270,8 +272,6 @@ Internet-Draft               RPKI Validation               February 2021
 
    Section 9 "Operational Considerations for Profile Agility" is
    removed.
-
-
 
 
 
@@ -416,6 +416,11 @@ Internet-Draft               RPKI Validation               February 2021
               <https://github.com/
               search?q=X509v3_addr_validate_path&type=commits>.
 
+   [Report]   Snijders, J., "[routing-wg] RFC 8360 should be the default
+              (Was: RPKI Outage Post-Mortem)", January 2021,
+              <https://www.ripe.net/ripe/mail/archives/routing-
+              wg/2021-January/004220.html>.
+
    [routinator]
               Snijders, J., "Harmonize RFC 8360 and RFC 6487 in rpki-
               rs", February 2021, <https://github.com/job/rpki-
@@ -436,6 +441,15 @@ Authors' Addresses
    Email: job@fastly.com
 
 
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 8]
+
+Internet-Draft               RPKI Validation               February 2021
+
+
    Ben Maddison
    Workonline
    Cape-Town
@@ -445,4 +459,46 @@ Authors' Addresses
 
 
 
-Snijders & Maddison      Expires 24 August 2021                 [Page 8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Snijders & Maddison      Expires 24 August 2021                 [Page 9]
