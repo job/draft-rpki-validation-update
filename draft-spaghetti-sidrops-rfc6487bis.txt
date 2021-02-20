@@ -73,7 +73,7 @@ Table of Contents
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .   8
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
@@ -306,6 +306,11 @@ Internet-Draft               RPKI Validation               February 2021
 
    *  FORT Validator [fort]
 
+   The 'public' OpenSSL X509v3_addr_validate_path() and
+   X509v3_asid_validate_path() interfaces do not read the Policy OIDs.
+   Also, these interfaces are not referenced outside OpenSSL itself:
+   [codesearch] and [github].
+
 5.  Security Considerations
 
    The authors believe that the revised validation algortihm introduces
@@ -325,11 +330,6 @@ Internet-Draft               RPKI Validation               February 2021
 
    *  id-pe-ipAddrBlocks-v2
 
-   *  id-pe-autonomousSysIds-v2
-
-   IANA is requested to reference this document in the "SMI Security for
-   PKIX Module Identifier" registry at:
-
 
 
 
@@ -337,6 +337,11 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 6]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   *  id-pe-autonomousSysIds-v2
+
+   IANA is requested to reference this document in the "SMI Security for
+   PKIX Module Identifier" registry at:
 
    *  id-mod-ip-addr-and-as-ident-v2
 
@@ -361,6 +366,12 @@ Internet-Draft               RPKI Validation               February 2021
               DOI 10.17487/RFC3779, June 2004,
               <https://www.rfc-editor.org/info/rfc3779>.
 
+   [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
+              Housley, R., and W. Polk, "Internet X.509 Public Key
+              Infrastructure Certificate and Certificate Revocation List
+              (CRL) Profile", RFC 5280, DOI 10.17487/RFC5280, May 2008,
+              <https://www.rfc-editor.org/info/rfc5280>.
+
    [RFC6482]  Lepinski, M., Kent, S., and D. Kong, "A Profile for Route
               Origin Authorizations (ROAs)", RFC 6482,
               DOI 10.17487/RFC6482, February 2012,
@@ -375,17 +386,6 @@ Internet-Draft               RPKI Validation               February 2021
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RFC8360]  Huston, G., Michaelson, G., Martinez, C., Bruijnzeels, T.,
-              Newton, A., and D. Shaw, "Resource Public Key
-              Infrastructure (RPKI) Validation Reconsidered", RFC 8360,
-              DOI 10.17487/RFC8360, April 2018,
-              <https://www.rfc-editor.org/info/rfc8360>.
-
-8.2.  Informative References
-
-
-
-
 
 
 
@@ -394,10 +394,27 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 7]
 Internet-Draft               RPKI Validation               February 2021
 
 
+   [RFC8360]  Huston, G., Michaelson, G., Martinez, C., Bruijnzeels, T.,
+              Newton, A., and D. Shaw, "Resource Public Key
+              Infrastructure (RPKI) Validation Reconsidered", RFC 8360,
+              DOI 10.17487/RFC8360, April 2018,
+              <https://www.rfc-editor.org/info/rfc8360>.
+
+8.2.  Informative References
+
+   [codesearch]
+              Debian, "Debian Codesearch", February 2021,
+              <https://codesearch.debian.net/
+              search?q=X509v3_addr_validate_path&literal=1>.
+
    [fort]     Snijders, J., "Harmonize RFC 8360 and RFC 6487 in FORT",
               February 2021, <https://github.com/job/FORT-
               validator/commit/
               d5ad4d8d22288c3afb9bbb8a3f2d612c742026ba>.
+
+   [github]   Github, "Github Search", February 2021,
+              <https://github.com/
+              search?q=X509v3_addr_validate_path&type=commits>.
 
    [routinator]
               Snijders, J., "Harmonize RFC 8360 and RFC 6487 in rpki-
@@ -425,23 +442,6 @@ Authors' Addresses
    South Africa
 
    Email: benm@workonline.africa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
