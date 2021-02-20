@@ -1,0 +1,15 @@
+Example outage: https://www.ripe.net/ripe/mail/archives/routing-wg/2021-January/004220.html
+
+OpenSSL has not committed to be RFC compliant, nor do
+RFC updates have any obligation to be OpenSSL compliant
+
+This patch for routinator: https://github.com/job/rpki-rs/commit/d9fa8c72cf83ed6f25e4420eaaa9054078f15bc3
+is functionally equivalent to: https://marc.info/?l=openbsd-tech&m=161011710120123&w=2
+is functionally equivalent to: https://github.com/job/FORT-validator/commit/d5ad4d8d22288c3afb9bbb8a3f2d612c742026ba
+
+Search engines suggest there are no consumers of the X509v3_{addr,asid}_* functions
+
+https://github.com/search?q=X509v3_addr_validate_path&type=commits
+https://codesearch.debian.net/search?q=X509v3_addr_validate_path&literal=1
+
+coauthors Tim & George
