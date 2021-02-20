@@ -315,7 +315,7 @@
       </front>
     </reference>
 
-    <reference anchor="fort" target="https://github.com/job/FORT-validator/commit/d5ad4d8d22288c3afb9bbb8a3f2d612c742026ba">
+    <reference anchor="fort" target="https://github.com/job/FORT-validator/commit/ff5f4b9313d5c553fa13bae427acb69665977727">
       <front>
         <title>Harmonize RFC 8360 and RFC 6487 in FORT</title>
         <author initials="J." surname="Snijders" fullname="Job Snijders"><organization>Fastly</organization></author>
