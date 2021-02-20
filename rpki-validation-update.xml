@@ -20,7 +20,7 @@
   
 <front>
     
-  <title abbrev="RPKI Validation Algorithm">RPKI Validation Un-re-reconsidered</title>
+  <title abbrev="RPKI Validation Algorithm">RPKI Validation Re-reconsidered</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
     <organization>Fastly</organization>
@@ -277,8 +277,9 @@
       The authors would like to thank
       Tim Bruijnzeels,
       George Michaelson,
+      Mikael Abrahamsson,
       and
-      Mikael Abrahamsson
+      Nick Hilliard
       for their helpful review of this document.
     </t>
 
