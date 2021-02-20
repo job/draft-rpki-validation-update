@@ -114,7 +114,7 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 2]
 Internet-Draft               RPKI Validation               February 2021
 
 
-   *  The IP Address Delegation extension described in Section 4.2.4.2
+      The IP Address Delegation extension described in Section 4.2.4.2
       is present in the end entity (EE) certificate (contained within
       the ROA), and each IP address prefix(es) in the ROA is contained
       within the VRS-IP set that is specified as an outcome of EE
