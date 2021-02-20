@@ -311,6 +311,9 @@ Internet-Draft               RPKI Validation               February 2021
    Also, these interfaces are not referenced outside OpenSSL itself:
    [codesearch] and [github].
 
+   At the time of writing there are zero (0) certificates in the RPKI
+   carrying the extensions and policy defined in [RFC8360].
+
 5.  Security Considerations
 
    The authors believe that the revised validation algortihm introduces
@@ -328,15 +331,14 @@ Internet-Draft               RPKI Validation               February 2021
    IANA is requested to reference this document in the "SMI Security for
    PKIX Certificate Extensions" registry at:
 
-   *  id-pe-ipAddrBlocks-v2
-
-
 
 
 Snijders & Maddison      Expires 24 August 2021                 [Page 6]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   *  id-pe-ipAddrBlocks-v2
 
    *  id-pe-autonomousSysIds-v2
 
@@ -382,9 +384,7 @@ Internet-Draft               RPKI Validation               February 2021
               DOI 10.17487/RFC6487, February 2012,
               <https://www.rfc-editor.org/info/rfc6487>.
 
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
 
 
 
@@ -393,6 +393,10 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 7]
 
 Internet-Draft               RPKI Validation               February 2021
 
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RFC8360]  Huston, G., Michaelson, G., Martinez, C., Bruijnzeels, T.,
               Newton, A., and D. Shaw, "Resource Public Key
@@ -438,10 +442,6 @@ Authors' Addresses
    Amsterdam
    Netherlands
 
-   Email: job@fastly.com
-
-
-
 
 
 
@@ -450,15 +450,15 @@ Snijders & Maddison      Expires 24 August 2021                 [Page 8]
 Internet-Draft               RPKI Validation               February 2021
 
 
+   Email: job@fastly.com
+
+
    Ben Maddison
    Workonline
    Cape-Town
    South Africa
 
    Email: benm@workonline.africa
-
-
-
 
 
 

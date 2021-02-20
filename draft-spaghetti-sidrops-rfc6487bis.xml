@@ -230,6 +230,9 @@
       The 'public' OpenSSL X509v3_addr_validate_path() and X509v3_asid_validate_path() interfaces do not read the Policy OIDs.
       Also, these interfaces are not referenced outside OpenSSL itself: <xref target="codesearch" /> and <xref target="github" />.
     </t>
+    <t>
+      At the time of writing there are zero (0) certificates in the RPKI carrying the extensions and policy defined in <xref target="RFC8360"/>.
+    </t>
   </section>
 
   <section title="Security Considerations">
