@@ -369,7 +369,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 7.  Acknowledgements
 
    The authors would like to thank Tim Bruijnzeels, George Michaelson,
-   and Mikael Abrahamson for their helpful review of this document.
+   and Mikael Abrahamsson for their helpful review of this document.
 
 8.  References
 
