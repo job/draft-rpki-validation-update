@@ -12,7 +12,8 @@
 
 <rfc
    category="std"
-   docName="draft-spaghetti-sidrops-rfc6487bis-00"
+   consensus="true"
+   docName="draft-spaghetti-sidrops-rpki-validation-update-00"
    updates="6482,6487"
    obsoletes="8360"
    ipr="trust200902">

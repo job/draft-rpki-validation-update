@@ -4,10 +4,12 @@
 #
 
 # Your nroff document is called foo.txt. Change below as appropiate.
-NAME=draft-spaghetti-sidrops-rfc6487bis
+NAME=rpki-validation-update
+IETFNAME=draft-spaghetti-sidrops-rpki-validation-update
 
 all: $(NAME).xml
-	xml2rfc $(NAME).xml --html --text
+	xml2rfc $(NAME).xml --html -o $(IETFNAME).html
+	xml2rfc $(NAME).xml --text -o $(IETFNAME).txt
 
 clean:
 	rm -f *.html *.txt
