@@ -396,9 +396,8 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 8.  Acknowledgements
 
-   The authors would like to thank Tim Bruijnzeels, George Michaelson,
-   Mikael Abrahamsson, and Nick Hilliard for their helpful review of
-   this document.
+   The authors would like to thank Tim Bruijnzeels, Mikael Abrahamsson,
+   and Nick Hilliard for their helpful review of this document.
 
 9.  References
 
@@ -441,6 +440,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
               <https://www.rfc-editor.org/info/rfc8360>.
 
 9.2.  Informative References
+
 
 
 
