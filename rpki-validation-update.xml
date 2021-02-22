@@ -89,6 +89,25 @@
 
   </section>
 
+  <section title="Deprecation of RFC 8360">
+    <t>
+      <xref target="RFC8360"/> defines several alternative OIDs for use in <xref target="RFC6487">Resource Certificates</xref>:
+      <list style="symbols">
+        <t>id-cp-ipAddr-asNumber-v2 - <xref target="RFC8360">Section 4.2.1</xref></t>
+        <t>id-pe-ipAddrBlocks-v2 - <xref target="RFC8360">Sections 4.2.2.1 and 4.2.2.2</xref></t>
+        <t>id-pe-autonomousSysIds-v2 - <xref target="RFC8360">Sections 4.2.2.3 and 4.2.2.4</xref></t>
+      </list>
+      The stated purpose of the above OIDs is rendered obsolete by the updated specifications contained in this document.
+    </t>
+    <t>
+      Therefore:
+      <list style="symbols">
+        <t>Issuing CAs MUST NOT include the above OIDs in newly issued Resource Certificates; and</t>
+        <t>Relying parties encountering the above OIDs in Resource Certificates MUST proceed according to the updated procedures described below.</t>
+      </list>
+    </t>
+  </section>
+
   <section title="Updates to RFC 6482">
    <t>
    This section updates <xref target="RFC6482">Section 4</xref>.
@@ -107,7 +126,7 @@
    <t>
      <list style="empty">
        <t>
-         The IP Address Delegation extension described in <xref target="RFC3779"/> is present in the end entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <xref target="RFC6487">Section 7.2</xref>.
+         Either the IP Address Delegation extension described in <xref target="RFC3779"/> or the alternative IP Address Delegation extension described in <xref target="RFC8360"/> (but not both) is present in the end entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <xref target="RFC6487">Section 7.2 (as updated by this document)</xref>.
        </t>
      </list>
    </t>
@@ -163,13 +182,17 @@
           <t>The signature of certificate x (x>1) is verified using the public key of the issuer's certificate (x-1), using the signature algorithm specified for that public key (in certificate x-1).</t>
           <t>The current time lies within the interval defined by the NotBefore and NotAfter values in the Validity field of certificate x.</t>
           <t>The Version, Issuer, and Subject fields of certificate x satisfy the constraints established in Sections 4.1 to 4.7 of RFC 6487.</t>
-          <t>If certificate x uses the Certificate Policy defined in Section 4.8.9 of <xref target="RFC6487"/>, then the certificate MUST contain all extensions defined in Section 4.8 of <xref target="RFC6487"/> that must be present.
-             The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
-             Any extension not thus identified MUST NOT appear in certificate x.</t>
-          <t>If certificate x uses the Certificate Policy defined in Section 4.2.4.1, then all extensions defined in Section 4.8 of <xref target="RFC6487"/>, except Sections 4.8.9, 4.8.10, and 4.8.11 MUST be present.
-             The certificate MUST contain an extension as defined in Sections 4.2.4.2 or 4.2.4.3, or both.
-             The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
-             Any extension not thus identified MUST NOT appear in certificate x.</t>
+          <t>
+            If certificate x uses the Certificate Policy defined in Section 4.8.9 of <xref target="RFC6487"/>, then the certificate MUST contain all extensions defined in Section 4.8 of <xref target="RFC6487"/> that must be present.
+            The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
+            Any extension not thus identified MUST NOT appear in certificate x.
+          </t>
+          <t>
+            If certificate x uses the Certificate Policy defined in <xref target="RFC8360">Section 4.2.4.1</xref>, then all extensions defined in Section 4.8 of <xref target="RFC6487"/>, except Sections 4.8.9, 4.8.10, and 4.8.11 MUST be present.
+            The certificate MUST contain an extension as defined in <xref target="RFC8360">Sections 4.2.4.2 or 4.2.4.3</xref>, or both.
+            The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
+            Any extension not thus identified MUST NOT appear in certificate x.
+          </t>
           <t>Certificate x MUST NOT have been revoked, i.e., it MUST NOT appear on a Certificate Revocation List (CRL) issued by the CA represented by certificate x-1.</t>
           <t>Compute the VRS-IP and VRS-AS set values as indicated below: 
             <list style="symbol">
@@ -179,15 +202,16 @@
               <t>If the IP Address Delegation extension is present in certificate x and x=1, set the VRS-IP to the resources found in this extension.</t>
               <t>If the AS Identifier Delegation extension is present in certificate x and x>1, set the VRS-AS to the intersection of the resources between this extension and the value of the VRS-AS computed for certificate x-1.</t>
               <t>If the AS Identifier Delegation extension is absent in certificate x, set the VRS-AS to NULL.</t>
-             </list>
-           </t>
-           <t>If there is any difference in resources in the VRS-IP and the IP Address Delegation extension on certificate x, or the VRS-AS and the AS Identifier Delegation extension on certificate x, then a warning listing the overclaiming resources for certificate x SHOULD be issued.</t>
-         </list>
-       </t>
-      <t>These rules allow a CA certificate to contain resources that are not present in (all of) the certificates along the path from the trust anchor to the CA certificate.
-         If none of the resources in the CA certificate are present in all certificates along the path, no subordinate certificates could be valid.
-         However, the certificate is not immediately rejected as this may be a transient condition.
-         Not immediately rejecting the certificate does not result in a security problem because the associated VRS sets accurately reflect the resources validly associated with the certificate in question.
+            </list>
+          </t>
+          <t>If there is any difference in resources in the VRS-IP and the IP Address Delegation extension on certificate x, or the VRS-AS and the AS Identifier Delegation extension on certificate x, then a warning listing the overclaiming resources for certificate x SHOULD be issued.</t>
+        </list>
+      </t>
+      <t>
+        These rules allow a CA certificate to contain resources that are not present in (all of) the certificates along the path from the trust anchor to the CA certificate.
+        If none of the resources in the CA certificate are present in all certificates along the path, no subordinate certificates could be valid.
+        However, the certificate is not immediately rejected as this may be a transient condition.
+        Not immediately rejecting the certificate does not result in a security problem because the associated VRS sets accurately reflect the resources validly associated with the certificate in question.
       </t>
     </section>
  
@@ -353,3 +377,4 @@
 </back>
 
 </rfc>
+<!-- vim: set et ts=2 sts=2 sw=2 tw=80 spell fdm=syntax: -->
