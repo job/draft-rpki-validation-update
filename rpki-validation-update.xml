@@ -12,7 +12,6 @@
 
 <rfc
    category="std"
-   consensus="true"
    docName="draft-spaghetti-sidrops-rpki-validation-update-00"
    updates="6482,6487"
    obsoletes="8360"
@@ -108,7 +107,7 @@
    <t>
      <list style="empty">
        <t>
-         The IP Address Delegation extension described in Section 4.2.4.2 is present in the end entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in Section 4.2.4.4.
+         The IP Address Delegation extension described in <xref target="RFC3779"/> is present in the end entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <xref target="RFC6487">Section 7.2</xref>.
        </t>
      </list>
    </t>

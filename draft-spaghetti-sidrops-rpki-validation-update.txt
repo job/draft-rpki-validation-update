@@ -5,9 +5,9 @@
 Network Working Group                                        J. Snijders
 Internet-Draft                                                    Fastly
 Obsoletes: 8360 (if approved)                                B. Maddison
-Updates: 6482, 6487 (if approved)                             Workonline
-Intended status: Standards Track                        20 February 2021
-Expires: 24 August 2021
+Updates: 6482,6487 (if approved)                              Workonline
+Intended status: Standards Track                       February 22, 2021
+Expires: August 26, 2021
 
 
                     RPKI Validation Re-reconsidered
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 August 2021.
+   This Internet-Draft will expire on August 26, 2021.
 
 Copyright Notice
 
@@ -43,20 +43,23 @@ Copyright Notice
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents (https://trustee.ietf.org/
-   license-info) in effect on the date of publication of this document.
-   Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
-   extracted from this document must include Simplified BSD License text
-   as described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Simplified BSD License.
+   Provisions Relating to IETF Documents
+   (https://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
 
 
 
-Snijders & Maddison      Expires 24 August 2021                 [Page 1]
+
+Snijders & Maddison      Expires August 26, 2021                [Page 1]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
+
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
 
 Table of Contents
 
@@ -66,9 +69,8 @@ Table of Contents
    3.  Updates to RFC 6487 . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  Updates to Section 7.2  . . . . . . . . . . . . . . . . .   3
      3.2.  Updates to Section 9  . . . . . . . . . . . . . . . . . .   6
-   4.  Implementation status - RFC EDITOR: REMOVE BEFORE
-           PUBLICATION . . . . . . . . . . . . . . . . . . . . . . .   6
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   4.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION   6
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -102,31 +104,27 @@ Table of Contents
 
    This section updates Section 4 [RFC6482].  The following text:
 
+      The IP address delegation extension [RFC3779] is present in the
+      end-entity (EE) certificate (contained within the ROA), and each
 
 
 
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 2]
+Snijders & Maddison      Expires August 26, 2021                [Page 2]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
-      The IP address delegation extension [RFC3779] is present in the
-      end-entity (EE) certificate (contained within the ROA), and each
       IP address prefix(es) in the ROA is contained within the set of IP
       addresses specified by the EE certificate's IP address delegation
       extension.
 
    Is replaced with:
 
-      The IP Address Delegation extension described in Section 4.2.4.2
-      is present in the end entity (EE) certificate (contained within
-      the ROA), and each IP address prefix(es) in the ROA is contained
+      The IP Address Delegation extension described in [RFC3779] is
+      present in the end entity (EE) certificate (contained within the
+      ROA), and each IP address prefix(es) in the ROA is contained
       within the VRS-IP set that is specified as an outcome of EE
-      certificate validation described in Section 4.2.4.4.
+      certificate validation described in Section 7.2 [RFC6487].
 
    Note that this ensures that ROAs can be valid only if all IP address
    prefixes in the ROA are encompassed by the VRS-IP of all certificates
@@ -162,16 +160,16 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    The algorithm is initialized with two new variables for use in the
    RPKI: Verified Resource Set-IP (VRS-IP) and Verified Resource Set-AS
    (VRS-AS).  These sets are used to track the set of INRs (IP address
+   space and AS numbers) that are considered valid for each CA
+   certificate.  The VRS-IP and VRS-AS sets are initially set to the IP
 
 
 
-Snijders & Maddison      Expires 24 August 2021                 [Page 3]
+Snijders & Maddison      Expires August 26, 2021                [Page 3]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
-   space and AS numbers) that are considered valid for each CA
-   certificate.  The VRS-IP and VRS-AS sets are initially set to the IP
    Address Delegation and AS Identifier Delegation values, respectively,
    from the trust anchor used to perform validation.
 
@@ -211,21 +209,6 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
        sections.  Any extension not thus identified MUST NOT appear in
        certificate x.
 
-
-
-
-
-
-
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 4]
-
-Internet-Draft          RPKI Validation Algorithm          February 2021
-
-
    5.  If certificate x uses the Certificate Policy defined in
        Section 4.2.4.1, then all extensions defined in Section 4.8 of
        [RFC6487], except Sections 4.8.9, 4.8.10, and 4.8.11 MUST be
@@ -235,34 +218,42 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
        each extension in the respective sections.  Any extension not
        thus identified MUST NOT appear in certificate x.
 
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 4]
+
+Internet-Draft          RPKI Validation Algorithm          February 2021
+
+
    6.  Certificate x MUST NOT have been revoked, i.e., it MUST NOT
        appear on a Certificate Revocation List (CRL) issued by the CA
        represented by certificate x-1.
 
    7.  Compute the VRS-IP and VRS-AS set values as indicated below:
 
-       *  If the IP Address Delegation extension is present in
+          If the IP Address Delegation extension is present in
           certificate x and x=1, set the VRS-IP to the resources found
           in this extension.
 
-       *  If the IP Address Delegation extension is present in
+          If the IP Address Delegation extension is present in
           certificate x and x>1, set the VRS-IP to the intersection of
           the resources between this extension and the value of the VRS-
           IP computed for certificate x-1.
 
-       *  If the IP Address Delegation extension is absent in
+          If the IP Address Delegation extension is absent in
           certificate x, set the VRS-IP to NULL.
 
-       *  If the IP Address Delegation extension is present in
+          If the IP Address Delegation extension is present in
           certificate x and x=1, set the VRS-IP to the resources found
           in this extension.
 
-       *  If the AS Identifier Delegation extension is present in
+          If the AS Identifier Delegation extension is present in
           certificate x and x>1, set the VRS-AS to the intersection of
           the resources between this extension and the value of the VRS-
           AS computed for certificate x-1.
 
-       *  If the AS Identifier Delegation extension is absent in
+          If the AS Identifier Delegation extension is absent in
           certificate x, set the VRS-AS to NULL.
 
    8.  If there is any difference in resources in the VRS-IP and the IP
@@ -274,20 +265,22 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    These rules allow a CA certificate to contain resources that are not
    present in (all of) the certificates along the path from the trust
    anchor to the CA certificate.  If none of the resources in the CA
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 5]
-
-Internet-Draft          RPKI Validation Algorithm          February 2021
-
-
    certificate are present in all certificates along the path, no
    subordinate certificates could be valid.  However, the certificate is
    not immediately rejected as this may be a transient condition.  Not
    immediately rejecting the certificate does not result in a security
    problem because the associated VRS sets accurately reflect the
    resources validly associated with the certificate in question.
+
+
+
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 5]
+
+Internet-Draft          RPKI Validation Algorithm          February 2021
+
 
 3.2.  Updates to Section 9
 
@@ -312,11 +305,11 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    As of today these changesets have been produced for commonly used
    Relying Party implementations:
 
-   *  NLnet Labs Routinator [routinator]
+      NLnet Labs Routinator [routinator]
 
-   *  OpenBSD rpki-client [rpkiclient]
+      OpenBSD rpki-client [rpkiclient]
 
-   *  FORT Validator [fort]
+      FORT Validator [fort]
 
    The 'public' OpenSSL X509v3_addr_validate_path() and
    X509v3_asid_validate_path() interfaces do not read the Policy OIDs.
@@ -326,18 +319,6 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    At the time of writing there are zero (0) certificates in the RPKI
    carrying the extensions and policy defined in [RFC8360].
 
-
-
-
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 6]
-
-Internet-Draft          RPKI Validation Algorithm          February 2021
-
-
 5.  Security Considerations
 
    The authors believe that the revised validation algortihm introduces
@@ -345,26 +326,38 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    to any ROA and/or router certificates to be accepted if they contain
    resources that are not held by the issuer.
 
+
+
+
+
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 6]
+
+Internet-Draft          RPKI Validation Algorithm          February 2021
+
+
 6.  IANA Considerations
 
    IANA is requested to reference this document in the "SMI Security for
    PKIX Certificate Policies" registry at:
 
-   *  id-cp-ipAddr-asNumber-v2
+      id-cp-ipAddr-asNumber-v2
 
    IANA is requested to reference this document in the "SMI Security for
    PKIX Certificate Extensions" registry at:
 
-   *  id-pe-ipAddrBlocks-v2
+      id-pe-ipAddrBlocks-v2
 
-   *  id-pe-autonomousSysIds-v2
+      id-pe-autonomousSysIds-v2
 
    IANA is requested to reference this document in the "SMI Security for
    PKIX Module Identifier" registry at:
 
-   *  id-mod-ip-addr-and-as-ident-v2
+      id-mod-ip-addr-and-as-ident-v2
 
-   *  id-mod-ip-addr-and-as-ident-2v2
+      id-mod-ip-addr-and-as-ident-2v2
 
 7.  Acknowledgements
 
@@ -386,19 +379,20 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
               DOI 10.17487/RFC3779, June 2004,
               <https://www.rfc-editor.org/info/rfc3779>.
 
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 7]
-
-Internet-Draft          RPKI Validation Algorithm          February 2021
-
-
    [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
               Housley, R., and W. Polk, "Internet X.509 Public Key
               Infrastructure Certificate and Certificate Revocation List
               (CRL) Profile", RFC 5280, DOI 10.17487/RFC5280, May 2008,
               <https://www.rfc-editor.org/info/rfc5280>.
+
+
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 7]
+
+Internet-Draft          RPKI Validation Algorithm          February 2021
+
 
    [RFC6482]  Lepinski, M., Kent, S., and D. Kong, "A Profile for Route
               Origin Authorizations (ROAs)", RFC 6482,
@@ -441,19 +435,20 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
               <https://www.ripe.net/ripe/mail/archives/routing-
               wg/2021-January/004220.html>.
 
-
-
-
-
-Snijders & Maddison      Expires 24 August 2021                 [Page 8]
-
-Internet-Draft          RPKI Validation Algorithm          February 2021
-
-
    [routinator]
               Snijders, J., "Harmonize RFC 8360 and RFC 6487 in rpki-
               rs", February 2021, <https://github.com/job/rpki-
               rs/commit/d9fa8c72cf83ed6f25e4420eaaa9054078f15bc3>.
+
+
+
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 8]
+
+Internet-Draft          RPKI Validation Algorithm          February 2021
+
 
    [rpkiclient]
               Jeker, C., "rpki-client check IP and ASnum coverage only
@@ -501,4 +496,9 @@ Authors' Addresses
 
 
 
-Snijders & Maddison      Expires 24 August 2021                 [Page 9]
+
+
+
+
+
+Snijders & Maddison      Expires August 26, 2021                [Page 9]
