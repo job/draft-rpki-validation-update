@@ -149,7 +149,7 @@
         The following section replaces <xref target="RFC6487">Section 7.2</xref> (Resource Certification Path Validation) in its entirety.
       </t>
       <t>
-        Validation of signed resource data using a target resource certificate consists of verying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.
+        Validation of signed resource data using a target resource certificate consists of verifying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.
       </t>
       <t>
         There are two inputs to the validation algortihm:
@@ -300,8 +300,9 @@
       The authors would like to thank
       Tim Bruijnzeels,
       Mikael Abrahamsson,
+      Nick Hilliard,
       and
-      Nick Hilliard
+      Peter Peele
       for their helpful review of this document.
     </t>
 

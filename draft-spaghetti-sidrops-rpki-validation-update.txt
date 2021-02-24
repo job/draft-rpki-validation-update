@@ -6,8 +6,8 @@ Network Working Group                                        J. Snijders
 Internet-Draft                                                    Fastly
 Obsoletes: 8360 (if approved)                                B. Maddison
 Updates: 6482, 6487 (if approved)                             Workonline
-Intended status: Standards Track                        22 February 2021
-Expires: 26 August 2021
+Intended status: Standards Track                        24 February 2021
+Expires: 28 August 2021
 
 
                     RPKI Validation Re-reconsidered
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 August 2021.
+   This Internet-Draft will expire on 28 August 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 1]
+Snijders & Maddison      Expires 28 August 2021                 [Page 1]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 2]
+Snijders & Maddison      Expires 28 August 2021                 [Page 2]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -165,7 +165,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 3]
+Snijders & Maddison      Expires 28 August 2021                 [Page 3]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -181,7 +181,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    Certification Path Validation) in its entirety.
 
    Validation of signed resource data using a target resource
-   certificate consists of verying that the digital signature of the
+   certificate consists of verifying that the digital signature of the
    signed resource data is valid, using the public key of the target
    resource certificate, and also validating the resource certificate in
    the context of the RPKI, using the path validation process.
@@ -221,7 +221,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 4]
+Snijders & Maddison      Expires 28 August 2021                 [Page 4]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -277,7 +277,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 5]
+Snijders & Maddison      Expires 28 August 2021                 [Page 5]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -333,7 +333,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 6]
+Snijders & Maddison      Expires 28 August 2021                 [Page 6]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -389,7 +389,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 7]
+Snijders & Maddison      Expires 28 August 2021                 [Page 7]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -397,7 +397,8 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 8.  Acknowledgements
 
    The authors would like to thank Tim Bruijnzeels, Mikael Abrahamsson,
-   and Nick Hilliard for their helpful review of this document.
+   Nick Hilliard, and Peter Peele for their helpful review of this
+   document.
 
 9.  References
 
@@ -444,8 +445,7 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-
-Snijders & Maddison      Expires 26 August 2021                 [Page 8]
+Snijders & Maddison      Expires 28 August 2021                 [Page 8]
 
 Internet-Draft          RPKI Validation Algorithm          February 2021
 
@@ -501,4 +501,4 @@ Authors' Addresses
 
 
 
-Snijders & Maddison      Expires 26 August 2021                 [Page 9]
+Snijders & Maddison      Expires 28 August 2021                 [Page 9]

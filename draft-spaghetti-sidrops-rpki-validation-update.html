@@ -1178,7 +1178,7 @@ dt+dd:empty::before{
 </tr></thead>
 <tfoot><tr>
 <td class="left">Snijders &amp; Maddison</td>
-<td class="center">Expires 26 August 2021</td>
+<td class="center">Expires 28 August 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1197,12 +1197,12 @@ dt+dd:empty::before{
 <a href="https://www.rfc-editor.org/rfc/rfc6482" class="eref">6482</a>, <a href="https://www.rfc-editor.org/rfc/rfc6487" class="eref">6487</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-02-22" class="published">22 February 2021</time>
+<time datetime="2021-02-24" class="published">24 February 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-08-26">26 August 2021</time></dd>
+<dd class="expires"><time datetime="2021-08-28">28 August 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1244,7 +1244,7 @@ dt+dd:empty::before{
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 26 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 28 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1382,15 +1382,15 @@ dt+dd:empty::before{
 <p id="section-3-1">
    This section updates <span><a href="#RFC6482" class="xref">Section 4</a> [<a href="#RFC6482" class="xref">RFC6482</a>]</span>.
    The following text:<a href="#section-3-1" class="pilcrow">¶</a></p>
-<ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-3-2.1">
+<ul class="ulEmpty normal">
+<li class="ulEmpty normal" id="section-3-2.1">
          The IP address delegation extension <span>[<a href="#RFC3779" class="xref">RFC3779</a>]</span> is present in the end-entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the set of IP addresses specified by the EE certificate's IP address delegation extension.<a href="#section-3-2.1" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="section-3-3">
      Is replaced with:<a href="#section-3-3" class="pilcrow">¶</a></p>
-<ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-3-4.1">
+<ul class="ulEmpty normal">
+<li class="ulEmpty normal" id="section-3-4.1">
          Either the IP Address Delegation extension described in <span>[<a href="#RFC3779" class="xref">RFC3779</a>]</span> or the alternative IP Address Delegation extension described in <span>[<a href="#RFC8360" class="xref">RFC8360</a>]</span> (but not both) is present in the end entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <span><a href="#RFC6487" class="xref">Section 7.2 (as updated by this document)</a> [<a href="#RFC6487" class="xref">RFC6487</a>]</span>.<a href="#section-3-4.1" class="pilcrow">¶</a>
 </li>
       </ul>
@@ -1412,7 +1412,7 @@ dt+dd:empty::before{
 <p id="section-4.1-1">
         The following section replaces <span><a href="#RFC6487" class="xref">Section 7.2</a> [<a href="#RFC6487" class="xref">RFC6487</a>]</span> (Resource Certification Path Validation) in its entirety.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <p id="section-4.1-2">
-        Validation of signed resource data using a target resource certificate consists of verying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+        Validation of signed resource data using a target resource certificate consists of verifying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <p id="section-4.1-3">
         There are two inputs to the validation algortihm:<a href="#section-4.1-3" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-4.1-4">
@@ -1566,8 +1566,9 @@ dt+dd:empty::before{
       The authors would like to thank
       Tim Bruijnzeels,
       Mikael Abrahamsson,
+      Nick Hilliard,
       and
-      Nick Hilliard
+      Peter Peele
       for their helpful review of this document.<a href="#section-8-1" class="pilcrow">¶</a></p>
 </section>
 <section id="section-9">
