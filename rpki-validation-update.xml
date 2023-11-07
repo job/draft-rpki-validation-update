@@ -12,7 +12,7 @@
 
 <rfc
    category="std"
-   docName="draft-spaghetti-sidrops-rpki-validation-update-02"
+   docName="draft-spaghetti-sidrops-rpki-validation-update-03"
    updates="6482,6487"
    obsoletes="8360"
    ipr="trust200902">
@@ -66,11 +66,13 @@
   <section title="Introduction">
 
     <t>
-	<xref target="RFC8360" /> describes an improved validation algorithm for signed objects published in the RPKI.
-        The improved validation algorithm would help in situations such as described in this <xref target="Report" />.
-	However, operational experience has shown the described procedure for deploying updates to the validation algorithm, as described in <xref target="RFC6487"/> Section 9, is impractical.
-	This document deprecates the original <xref target="RFC6487" /> section 7 algorithm in favour of the <xref target="RFC8360" /> algorithm, and obsoletes <xref target="RFC8360" /> because a migration via those codepoints is infeasible.
-	This document also deprecates the procedure set out in <xref target="RFC6487" /> section 9 for future changes to the validation algorithm.
+      <xref target="RFC8360" /> describes an improved validation algorithm for signed objects published in the RPKI.
+      This improved validation algorithm would help in situations such as described in this <xref target="Report" />.
+      However, analysis has shown the described procedure for deploying updates to the validation algorithm, as described in <xref target="RFC6487"/> Section 9, is impractical, and this specification is <xref target="incomplete"/>.
+    </t>
+    <t>
+      This document deprecates the original <xref target="RFC6487" /> section 7 algorithm in favour of the <xref target="RFC8360" /> algorithm, and obsoletes <xref target="RFC8360" /> because a migration via those codepoints is infeasible.
+      This document also deprecates the procedure set out in <xref target="RFC6487" /> section 9 for future changes to the validation algorithm.
     </t>
 
     <section title="Requirements Language">
@@ -371,10 +373,16 @@
       </front>
     </reference>
 
+    <reference anchor="incomplete" target="https://mailarchive.ietf.org/arch/msg/sidrops/L02g9Z8OIUc1AOi_IoRViOvTSCY/">
+      <front>
+        <title>What are the RFC 5280 section 6.1.1 inputs for (c) (e) (f) (g) in context of RFC 8360?</title>
+        <author initials="J." surname="Snijders" fullname="Job Snijders"><organization>Fastly</organization></author>
+        <date year="2023" month="October" />
+      </front>
+    </reference>
 
   </references>
 
 </back>
 
 </rfc>
-<!-- vim: set et ts=2 sts=2 sw=2 tw=80 spell fdm=syntax: -->

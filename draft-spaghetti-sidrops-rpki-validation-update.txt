@@ -6,12 +6,12 @@ Network Working Group                                        J. Snijders
 Internet-Draft                                                    Fastly
 Obsoletes: 8360 (if approved)                                B. Maddison
 Updates: 6482, 6487 (if approved)                             Workonline
-Intended status: Standards Track                        24 February 2021
-Expires: 28 August 2021
+Intended status: Standards Track                         7 November 2023
+Expires: 10 May 2024
 
 
                     RPKI Validation Re-reconsidered
-           draft-spaghetti-sidrops-rpki-validation-update-00
+           draft-spaghetti-sidrops-rpki-validation-update-03
 
 Abstract
 
@@ -35,11 +35,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 August 2021.
+   This Internet-Draft will expire on 10 May 2024.
 
 Copyright Notice
 
-   Copyright (c) 2021 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -47,15 +47,15 @@ Copyright Notice
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Simplified BSD License text
-   as described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Simplified BSD License.
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 1]
+Snijders & Maddison        Expires 10 May 2024                  [Page 1]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
 Table of Contents
@@ -80,16 +80,17 @@ Table of Contents
 1.  Introduction
 
    [RFC8360] describes an improved validation algorithm for signed
-   objects published in the RPKI.  The improved validation algorithm
+   objects published in the RPKI.  This improved validation algorithm
    would help in situations such as described in this [Report].
-   However, operational experience has shown the described procedure for
-   deploying updates to the validation algorithm, as described in
-   [RFC6487] Section 9, is impractical.  This document deprecates the
-   original [RFC6487] section 7 algorithm in favour of the [RFC8360]
-   algorithm, and obsoletes [RFC8360] because a migration via those
-   codepoints is infeasible.  This document also deprecates the
-   procedure set out in [RFC6487] section 9 for future changes to the
-   validation algorithm.
+   However, analysis has shown the described procedure for deploying
+   updates to the validation algorithm, as described in [RFC6487]
+   Section 9, is impractical, and this specification is [incomplete].
+
+   This document deprecates the original [RFC6487] section 7 algorithm
+   in favour of the [RFC8360] algorithm, and obsoletes [RFC8360] because
+   a migration via those codepoints is infeasible.  This document also
+   deprecates the procedure set out in [RFC6487] section 9 for future
+   changes to the validation algorithm.
 
 1.1.  Requirements Language
 
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Snijders & Maddison      Expires 28 August 2021                 [Page 2]
+Snijders & Maddison        Expires 10 May 2024                  [Page 2]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
    *  id-pe-ipAddrBlocks-v2 - Sections 4.2.2.1 and 4.2.2.2 [RFC8360]
@@ -165,9 +165,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 3]
+Snijders & Maddison        Expires 10 May 2024                  [Page 3]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
 4.  Updates to RFC 6487
@@ -221,9 +221,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 4]
+Snijders & Maddison        Expires 10 May 2024                  [Page 4]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
    1.  The signature of certificate x (x>1) is verified using the public
@@ -277,9 +277,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 5]
+Snijders & Maddison        Expires 10 May 2024                  [Page 5]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
        *  If the IP Address Delegation extension is present in
@@ -333,9 +333,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 6]
+Snijders & Maddison        Expires 10 May 2024                  [Page 6]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
    As of today these changesets have been produced for commonly used
@@ -389,9 +389,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 7]
+Snijders & Maddison        Expires 10 May 2024                  [Page 7]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
 8.  Acknowledgements
@@ -445,9 +445,9 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 8]
+Snijders & Maddison        Expires 10 May 2024                  [Page 8]
 
-Internet-Draft          RPKI Validation Algorithm          February 2021
+Internet-Draft          RPKI Validation Algorithm          November 2023
 
 
    [codesearch]
@@ -463,6 +463,12 @@ Internet-Draft          RPKI Validation Algorithm          February 2021
    [github]   Github, "Github Search", February 2021,
               <https://github.com/
               search?q=X509v3_addr_validate_path&type=commits>.
+
+   [incomplete]
+              Snijders, J., "What are the RFC 5280 section 6.1.1 inputs
+              for (c) (e) (f) (g) in context of RFC 8360?", October
+              2023, <https://mailarchive.ietf.org/arch/msg/sidrops/
+              L02g9Z8OIUc1AOi_IoRViOvTSCY/>.
 
    [Report]   Snijders, J., "[routing-wg] RFC 8360 should be the default
               (Was: RPKI Outage Post-Mortem)", January 2021,
@@ -485,7 +491,6 @@ Authors' Addresses
    Fastly
    Amsterdam
    Netherlands
-
    Email: job@fastly.com
 
 
@@ -494,6 +499,13 @@ Authors' Addresses
    Cape-Town
    South Africa
 
+
+
+Snijders & Maddison        Expires 10 May 2024                  [Page 9]
+
+Internet-Draft          RPKI Validation Algorithm          November 2023
+
+
    Email: benm@workonline.africa
 
 
@@ -501,4 +513,48 @@ Authors' Addresses
 
 
 
-Snijders & Maddison      Expires 28 August 2021                 [Page 9]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Snijders & Maddison        Expires 10 May 2024                 [Page 10]
