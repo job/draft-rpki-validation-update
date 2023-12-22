@@ -16,9 +16,9 @@
    updates="6482,6487"
    obsoletes="8360"
    ipr="trust200902">
-  
+
 <front>
-    
+
   <title abbrev="RPKI Validation Algorithm">RPKI Validation Re-reconsidered</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -46,6 +46,43 @@
       <email>benm@workonline.africa</email>
     </address>
   </author>
+
+  <author fullname="George Michaelson" initials="G." surname="Michaelson">
+    <organization>APNIC</organization>
+    <address>
+      <postal>
+        <street />
+        <city>South Brisbane</city>
+        <code />
+        <country>Australia</country>
+      </postal>
+      <email>ggm@apnic.net</email>
+    </address>
+  </author>
+
+  <author fullname="Geoff Huston" initials="G." surname="Huston">
+    <organization>APNIC</organization>
+    <address>
+      <postal>
+        <street />
+        <city>South Brisbane</city>
+        <code />
+        <country>Australia</country>
+      </postal>
+      <email>gih@apnic.net</email>
+    </address>
+  </author>
+
+  <author fullname="Theo Buehler" initials="T." surname="Buehler">
+    <organization>OpenBSD</organization>
+    <address>
+      <postal>
+        <country>CH</country>
+      </postal>
+      <email>tb@openbsd.org</email>
+    </address>
+  </author>
+
   <date />
 
   <abstract>
@@ -58,11 +95,11 @@
     </t>
 
   </abstract>
-  
+
 </front>
 
 <middle>
-  
+
   <section title="Introduction">
 
     <t>
@@ -196,7 +233,7 @@
             Any extension not thus identified MUST NOT appear in certificate x.
           </t>
           <t>Certificate x MUST NOT have been revoked, i.e., it MUST NOT appear on a Certificate Revocation List (CRL) issued by the CA represented by certificate x-1.</t>
-          <t>Compute the VRS-IP and VRS-AS set values as indicated below: 
+          <t>Compute the VRS-IP and VRS-AS set values as indicated below:
             <list style="symbol">
               <t>If the IP Address Delegation extension is present in certificate x and x=1, set the VRS-IP to the resources found in this extension.</t>
               <t>If the IP Address Delegation extension is present in certificate x and x>1, set the VRS-IP to the intersection of the resources between this extension and the value of the VRS-IP computed for certificate x-1.</t>
@@ -216,11 +253,11 @@
         Not immediately rejecting the certificate does not result in a security problem because the associated VRS sets accurately reflect the resources validly associated with the certificate in question.
       </t>
     </section>
- 
+
 <!--         This path validation process verifies, among other things, that a prospective certification path (a sequence of n certificates) satisfies the following conditions: -->
 
 
-      <!-- copy from RFC 8360 section 4.2.4.4 ... --> 
+      <!-- copy from RFC 8360 section 4.2.4.4 ... -->
 
     <section title="Updates to Section 9">
       <t>
@@ -250,7 +287,7 @@
         <t>NLnet Labs Routinator <xref target="routinator" /></t>
         <t>OpenBSD rpki-client <xref target="rpkiclient" /></t>
         <t>FORT Validator <xref target="fort" /></t>
-      </list> 
+      </list>
     </t>
     <t>
       The 'public' OpenSSL X509v3_addr_validate_path() and X509v3_asid_validate_path() interfaces do not read the Policy OIDs.
