@@ -172,7 +172,7 @@
 
   <section title="Updates to RFC 6487" anchor="new">
     <t>
-      This section updates <xref target="RFC6487"/> to specify an improved behavior of a Relying Party implementation.
+      This section updates <xref target="RFC6487"/> to specify an improved behavior for Relying Party implementations.
     </t>
 
     <section title="Updates to Section 7.2">
