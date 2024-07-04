@@ -124,7 +124,7 @@
 
   </section>
 
-  <section title="Deprecation of RFC 8360">
+  <section title="Obsolescence of RFC 8360">
     <t>
       <xref target="RFC8360"/> defines several alternative OIDs for use in <xref target="RFC6487">Resource Certificates</xref>:
       <list style="symbols">
@@ -138,7 +138,7 @@
       Therefore:
       <list style="symbols">
         <t>Issuing CAs MUST NOT include the above OIDs in newly issued Resource Certificates; and</t>
-        <t>Relying parties encountering the above OIDs in Resource Certificates MUST proceed according to the updated procedures described below.</t>
+        <t>Relying parties encountering the above OIDs in Resource Certificates MUST consider such certificates invalid.</t>
       </list>
     </t>
   </section>
@@ -305,14 +305,14 @@
   <section title="IANA Considerations">
 
     <t>
-      IANA is requested to reference this document in the "SMI Security for PKIX Certificate Policies" registry at:
+      IANA is requested to mark as "Reserved and Obsolete" and reference this document in the "SMI Security for PKIX Certificate Policies" registry at:
       <list style="symbol">
         <t>id-cp-ipAddr-asNumber-v2</t>
       </list>
     </t>
 
     <t>
-      IANA is requested to reference this document in the "SMI Security for PKIX Certificate Extensions" registry at:
+      IANA is requested to mark as "Reserved and Obsolete" and reference this document in the "SMI Security for PKIX Certificate Extensions" registry at:
       <list style="symbol">
         <t>id-pe-ipAddrBlocks-v2</t>
         <t>id-pe-autonomousSysIds-v2</t>
@@ -320,10 +320,18 @@
     </t>
 
     <t>
-      IANA is requested to reference this document in the "SMI Security for PKIX Module Identifier" registry at:
+      IANA is requested to mark as "Reserved and Obsolete" and reference this document in the "SMI Security for PKIX Module Identifier" registry at:
       <list style="symbol">
         <t>id-mod-ip-addr-and-as-ident-v2</t>
         <t>id-mod-ip-addr-and-as-ident-2v2</t>
+      </list>
+    </t>
+
+    <t>
+      IANA is requested to reference this document in the "SMI Security for PKIX Module Identifier" registry at:
+      <list style="symbol">
+        <t>id-pe-ipAddrBlocks</t>
+        <t>id-pe-autonomousSysIds</t>
       </list>
     </t>
 
