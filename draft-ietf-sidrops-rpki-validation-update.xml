@@ -187,7 +187,7 @@
               Validation of signed resource data using a target resource certificate consists of verifying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.
             </t>
             <t>
-              There are two inputs to the validation algortihm:
+              There are two inputs to the validation algorithm:
               <list style="numbers">
                 <t>A trust anchor</t>
                 <t>A certificate to be validated</t>
@@ -300,7 +300,7 @@
   <section title="Security Considerations">
 
     <t>
-      The authors believe that the revised validation algortihm introduces no new security vulnerabilities into the RPKI, because it cannot lead to any ROA and/or router certificates to be accepted if they contain resources that are not held by the issuer.
+      The authors believe that the revised validation algorithm introduces no new security vulnerabilities into the RPKI, because it cannot lead to any ROA and/or router certificates to be accepted if they contain resources that are not held by the issuer.
     </t>
 
   </section>
