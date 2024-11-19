@@ -235,7 +235,7 @@
                     <t>If the IP Address Delegation extension is present in certificate x and x=1, set the VRS-IP to the resources found in this extension.</t>
                     <t>If the IP Address Delegation extension is present in certificate x and x>1, set the VRS-IP to the intersection of the resources between this extension and the value of the VRS-IP computed for certificate x-1.</t>
                     <t>If the IP Address Delegation extension is absent in certificate x, set the VRS-IP to NULL.</t>
-                    <t>If the IP Address Delegation extension is present in certificate x and x=1, set the VRS-IP to the resources found in this extension.</t>
+                    <t>If the AS Identifier Delegation extension is present in certificate x and x=1, set the VRS-AS to the resources found in this extension.</t>
                     <t>If the AS Identifier Delegation extension is present in certificate x and x>1, set the VRS-AS to the intersection of the resources between this extension and the value of the VRS-AS computed for certificate x-1.</t>
                     <t>If the AS Identifier Delegation extension is absent in certificate x, set the VRS-AS to NULL.</t>
                   </list>
