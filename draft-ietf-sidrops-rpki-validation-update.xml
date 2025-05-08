@@ -10,7 +10,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-validation-update-01"
+     docName="draft-ietf-sidrops-rpki-validation-update-02"
      updates="6487,9582"
      obsoletes="8360"
      consensus="true"
@@ -22,7 +22,7 @@
   <title abbrev="RPKI Validation Algorithm Revision">Revision of the RPKI Validation Algorithm</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
-    <organization>Fastly</organization>
+    <organization />
     <address>
       <postal>
         <street />
@@ -30,7 +30,7 @@
         <code />
         <country>Netherlands</country>
       </postal>
-      <email>job@fastly.com</email>
+      <email>job@sobornost.net</email>
     </address>
   </author>
 
