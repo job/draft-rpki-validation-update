@@ -35,6 +35,16 @@
     </address>
   </author>
 
+  <author fullname="Theo Buehler" initials="T." surname="Buehler">
+    <organization>OpenBSD</organization>
+    <address>
+      <postal>
+        <country>CH</country>
+      </postal>
+      <email>tb@openbsd.org</email>
+    </address>
+  </author>
+
   <author fullname="Ben Maddison" initials="B." surname="Maddison">
     <organization>Workonline</organization>
     <address>
@@ -74,17 +84,6 @@
       <email>gih@apnic.net</email>
     </address>
   </author>
-
-  <author fullname="Theo Buehler" initials="T." surname="Buehler">
-    <organization>OpenBSD</organization>
-    <address>
-      <postal>
-        <country>CH</country>
-      </postal>
-      <email>tb@openbsd.org</email>
-    </address>
-  </author>
-
 -->
 
   <date />
