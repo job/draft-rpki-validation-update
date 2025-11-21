@@ -431,6 +431,7 @@
       <front>
         <title>Revision of the RPKI Validation Algorithm</title>
         <author initials="J." surname="Snijders" fullname="Job Snijders" />
+        <author initials="T." surname="Buehler" fullname="Theo Buehler" />
         <author initials="B." surname="Maddison" fullname="Ben Maddison" />
         <date year="2025" month="November" />
       </front>
