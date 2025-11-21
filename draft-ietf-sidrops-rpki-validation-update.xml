@@ -188,9 +188,10 @@
               Validation of signed resource data using a target resource certificate consists of verifying that the digital signature of the signed resource data is valid, using the public key of the target resource certificate, and also validating the resource certificate in the context of the RPKI, using the path validation process.
             </t>
             <t>
-              There are two inputs to the validation algorithm:
+              There are three inputs to the validation algorithm:
               <list style="numbers">
                 <t>A trust anchor</t>
+                <t>A possibly empty set of intermediate CA certificates already validated by the algorithm using the same trust anchor</t>
                 <t>A certificate to be validated</t>
               </list>
             </t>
@@ -205,7 +206,7 @@
             <t>
               <list style="letters">
                 <t>for all 'x' in {1, ..., n-1}, the subject of certificate 'x' is the issuer of certificate ('x' + 1);</t>
-                <t>certificate '1' is issued by a trust anchor;</t>
+                <t>certificate '1' is issued by the trust anchor;</t>
                 <t>certificate 'n' is the certificate to be validated; and</t>
                 <t>for all 'x' in {1, ..., n}, certificate 'x' is valid.</t>
               </list>
@@ -217,15 +218,9 @@
               <list style="numbers">
                 <t>The signature of certificate x (x>1) is verified using the public key of the issuer's certificate (x-1), using the signature algorithm specified for that public key (in certificate x-1).</t>
                 <t>The current time lies within the interval defined by the NotBefore and NotAfter values in the Validity field of certificate x.</t>
-                <t>The Version, Issuer, and Subject fields of certificate x satisfy the constraints established in Sections 4.1 to 4.7 of RFC 6487.</t>
+                <t>The fields of certificate x satisfy the constraints established in Sections 4.1 to 4.7 of RFC 6487.</t>
                 <t>
-                  If certificate x uses the Certificate Policy defined in Section 4.8.9 of <xref target="RFC6487"/>, then the certificate MUST contain all extensions defined in Section 4.8 of <xref target="RFC6487"/> that must be present.
-                  The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
-                  Any extension not thus identified MUST NOT appear in certificate x.
-                </t>
-                <t>
-                  If certificate x uses the Certificate Policy defined in <xref target="RFC8360">Section 4.2.4.1</xref>, then all extensions defined in Section 4.8 of <xref target="RFC6487"/>, except Sections 4.8.9, 4.8.10, and 4.8.11 MUST be present.
-                  The certificate MUST contain an extension as defined in <xref target="RFC8360">Sections 4.2.4.2 or 4.2.4.3</xref>, or both.
+                  Certificate x uses the Certificate Policy defined in Section 4.8.9 of <xref target="RFC6487"/> and MUST contain all extensions defined in Section 4.8 of <xref target="RFC6487"/> that must be present.
                   The value(s) for each of these extensions MUST satisfy the constraints established for each extension in the respective sections.
                   Any extension not thus identified MUST NOT appear in certificate x.
                 </t>
