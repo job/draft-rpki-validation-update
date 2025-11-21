@@ -10,7 +10,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-validation-update-02"
+     docName="draft-ietf-sidrops-rpki-validation-update-03"
      updates="6487,9582"
      obsoletes="8360"
      consensus="true"
