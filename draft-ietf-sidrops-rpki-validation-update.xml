@@ -22,15 +22,16 @@
   <title abbrev="RPKI Validation Algorithm Revision">Revision of the RPKI Validation Algorithm</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
-    <organization />
+    <organization abbrev="BSD">BSD Software Development</organization>
     <address>
       <postal>
         <street />
-        <city>Amsterdam</city>
         <code />
+        <city>Amsterdam</city>
         <country>Netherlands</country>
       </postal>
-      <email>job@sobornost.net</email>
+      <email>job@bsd.nl</email>
+      <uri>https://www.bsd.nl</uri>
     </address>
   </author>
 
