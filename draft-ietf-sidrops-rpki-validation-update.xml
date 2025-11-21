@@ -10,7 +10,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-validation-update-02"
+     docName="draft-ietf-sidrops-rpki-validation-update-03"
      updates="6487,9582"
      obsoletes="8360"
      consensus="true"
@@ -22,15 +22,26 @@
   <title abbrev="RPKI Validation Algorithm Revision">Revision of the RPKI Validation Algorithm</title>
 
   <author fullname="Job Snijders" initials="J." surname="Snijders">
-    <organization />
+    <organization abbrev="BSD">BSD Software Development</organization>
     <address>
       <postal>
         <street />
-        <city>Amsterdam</city>
         <code />
+        <city>Amsterdam</city>
         <country>Netherlands</country>
       </postal>
-      <email>job@sobornost.net</email>
+      <email>job@bsd.nl</email>
+      <uri>https://www.bsd.nl</uri>
+    </address>
+  </author>
+
+  <author fullname="Theo Buehler" initials="T." surname="Buehler">
+    <organization>OpenBSD</organization>
+    <address>
+      <postal>
+        <country>CH</country>
+      </postal>
+      <email>tb@openbsd.org</email>
     </address>
   </author>
 
@@ -73,17 +84,6 @@
       <email>gih@apnic.net</email>
     </address>
   </author>
-
-  <author fullname="Theo Buehler" initials="T." surname="Buehler">
-    <organization>OpenBSD</organization>
-    <address>
-      <postal>
-        <country>CH</country>
-      </postal>
-      <email>tb@openbsd.org</email>
-    </address>
-  </author>
-
 -->
 
   <date />
@@ -158,7 +158,7 @@
         </blockquote>
         <t>NEW</t>
         <blockquote>
-          The IP address delegation extension <xref target="RFC3779"/> is present in the end-entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <xref target="new"/>.
+          The IP address delegation extension <xref target="RFC3779"/> is present in the end-entity (EE) certificate (contained within the ROA), and each IP address prefix(es) in the ROA is contained within the VRS-IP set that is specified as an outcome of EE certificate validation described in <xref section="4" target="I-D.rpki-validation-update" />.
         </blockquote>
       </li>
     </ul>
@@ -425,6 +425,16 @@
         </author>
         <date year="2023" month="October" />
       </front>
+    </reference>
+
+    <reference anchor="I-D.rpki-validation-update" target="https://datatracker.ietf.org/doc/draft-ietf-sidrops-rpki-validation-update">
+      <front>
+        <title>Revision of the RPKI Validation Algorithm</title>
+        <author initials="J." surname="Snijders" fullname="Job Snijders" />
+        <author initials="B." surname="Maddison" fullname="Ben Maddison" />
+        <date year="2025" month="November" />
+      </front>
+      <seriesInfo name="Internet-Draft" value="draft-ietf-sidrops-rpki-validation-update"/>
     </reference>
 
   </references>
